@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>explore</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="quote.css" rel="stylesheet">
+</head>
+<body>
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">See more</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="index.html">Home</a>
+    <a href="in.html">quote</a>
+    <a href="quote.html">lucky number</a>
+  </div>
+</div>
+<h1><center>Exprole your day!</center></h1>
+<div class="slide">
+  <img class="mySlides" src="s1.jpg" >
+  <img class="mySlides" src="s2.jpg" >
+  <img class="mySlides" src="s3.JPG" >
+  <img class="mySlides" src="s4.jpg" >
+</div>
+
+    <center><h2>Enter your name</h2>
+      <h3>to see your lucky number</h3>
+    <button><a href="in.html">click</a></button>
+    </center>
+    
+<script>
+var myIndex = 0;
+carousel();
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000); // Change image every 4 seconds
+}
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>

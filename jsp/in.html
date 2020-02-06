@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<style>
+    p{
+        font-size: 70px;     
+    }
+    h2{
+        color: darkviolet;
+    }
+    </style>
+<body>
+<h2><center>Here your lucky number</center></h2>
+<center><p id="random_number"></p></center>
+<center><button><a href="quote.html">back</a></button></center>
+<script>
+function getRndInteger(minimum, maximum) {
+return Math.floor(Math.random() * (maximum - minimum)) + minimum;
+}
+document.getElementById("random_number").innerHTML = getRndInteger(1,10);
+</script>
+</body>
+</html>
